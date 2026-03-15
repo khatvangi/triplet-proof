@@ -1,0 +1,24 @@
+# python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# large binary data (regenerate with run_publication_controls.py)
+results/null_distributions.npz
+results/null_*.npy
+
+# OS
+.DS_Store
+nohup.out
+*.swp
+
+# IDE
+.vscode/
+.idea/
+
+# SLURM logs
+logs/
+*.err
+*.out
+!results/*.json

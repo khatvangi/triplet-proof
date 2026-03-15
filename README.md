@@ -1,0 +1,148 @@
+# triplet-proof
+
+Monte Carlo framework demonstrating that the standard genetic code (SGC) is
+statistically optimized for error-minimization, and that triplet codon
+architecture — not amino acid alphabet size — is the primary enabler.
+
+Companion code for:
+**"Triplet architecture enables deep error-minimization in the genetic code"**
+(submitted to *Journal of Molecular Evolution*)
+
+## Key findings
+
+1. **SGC optimization** (p < 10⁻⁶): the SGC outperforms all 1,000,000 random
+   codes with matched degeneracy on both Dirichlet energy and noise distortion.
+2. **Architecture dominates alphabet**: moving from doublet to triplet codons
+   shifts the z-score by 11.0 units; expanding from 10 to 20 amino acids
+   shifts it by only 1.8 units.
+3. **Mechanism**: position 3 (wobble) absorbs 69% of single-nucleotide errors
+   as synonymous substitutions, creating error-buffering corridors that doublet
+   codes cannot support.
+
+## Reproduce
+
+```bash
+# prerequisites: python 3.10+, numpy, pandas, scipy, scikit-learn, networkx, matplotlib
+
+# 1. build amino acid property space (22 descriptors → 8 PCs, 97.1% variance)
+python build_aa_props.py
+
+# 2. phase-1 sanity check (~2 min, single process)
+python run_phase1_demo.py
+
+# 3. full 1M triplet run (~2 min on 64 cores)
+python run_phase2_batch.py --n 1000000 --workers 32 \
+  --out results/phase2_triplet.auto.json
+
+# 4. doublet (n=2) with 10-class reduced alphabet
+python run_phase2_n2n4.py --n-bases 2 --n 1000000 --workers 32 --raa raa10 \
+  --out results/phase2_doublet.raa10.json
+
+# 5. 2×2 factorial + sensitivity analysis (generates all manuscript numbers)
+python run_publication_controls.py --n-null 1000000 --workers 32
+
+# 6. verify synonymy numbers
+python verify_synonymy.py
+
+# 7. run tests
+python -m pytest tests/ -v
+
+# 8. generate figures
+python figures/fig1_optimization_factorial.py
+python figures/fig2_wobble_mechanism.py
+python figures/figS1_raw_distributions.py
+```
+
+SLURM batch scripts (`slurm_triplet.sbatch`, `slurm_doublet.sbatch`,
+`slurm_quadruplet.sbatch`) request 32 CPUs / 64 GB RAM.
+
+## Directory structure
+
+```
+triplet-proof/
+├── src/                            # core library
+│   ├── io/
+│   │   ├── codon_io.py             # load codon_table.csv → DataFrame
+│   │   ├── aa_props_io.py          # feature loading, correlation pruning, PCA
+│   │   └── aa_props_lib.py         # 22 amino acid properties (canonical values)
+│   ├── sims/
+│   │   ├── codon_graph.py          # Hamming graph on 4^n nodes
+│   │   └── random_codes.py         # degeneracy-preserving shuffle
+│   ├── metrics/
+│   │   ├── dirichlet.py            # E = Σ_edges ||p(u) - p(v)||²
+│   │   └── mi.py                   # mutual information by codon position
+│   └── receiver/
+│       └── thermo_noise.py         # noise distortion (Boltzmann softmax)
+├── tests/
+│   ├── test_graph.py               # Hamming graph construction
+│   ├── test_phase1_compat.py       # codon loader + phase-1 compatibility
+│   └── test_synonymy.py            # position-specific synonymy regression
+├── figures/
+│   ├── fig1_optimization_factorial.py   # main figure (3 panels)
+│   ├── fig2_wobble_mechanism.py         # Hamming neighborhood schematic
+│   └── figS1_raw_distributions.py       # null distributions (supplementary)
+├── results/                        # canonical outputs (see below)
+├── data/processed/
+│   ├── aa_props.parquet            # 8 PCA columns (97.1% variance)
+│   └── aa_props_meta.json          # PCA metadata
+├── codon_table.csv                 # standard genetic code (64 codons)
+├── aa_props.csv                    # 6 raw properties (legacy, phase-1 only)
+├── build_aa_props.py               # build parquet from 22-property library
+├── run_phase1_demo.py              # phase-1 sanity check
+├── run_phase2_batch.py             # 1M triplet Monte Carlo
+├── run_phase2_n2n4.py              # doublet/quadruplet Monte Carlo
+├── run_publication_controls.py     # 2×2 factorial + sensitivity
+├── verify_synonymy.py              # position-specific synonymy computation
+├── manuscript_JME.md               # manuscript draft
+├── supplementary_tables_JME.md     # Tables S1, S2
+└── conftest.py                     # pytest path setup
+```
+
+## Metrics
+
+**Dirichlet energy** measures smoothness of amino acid properties across the
+codon Hamming graph:
+
+    E = Σ_{(u,v) ∈ edges} ||f(u) − f(v)||²
+
+**Noise distortion** measures total property change across all non-synonymous
+single-nucleotide substitutions, averaged per sense codon:
+
+    D = (1/|C|) Σ_{c ∈ C} Σ_{c' ∈ N_sense(c)} ||f(c) − f(c')||
+
+Lower values = more robust code. The SGC scores lower than all 1M random codes
+on both metrics.
+
+## Null model
+
+Random codes are generated by permuting amino acid labels among individual
+sense codons while preserving the number of codons assigned to each amino acid
+(degeneracy structure). Stop codons remain fixed. This null preserves degeneracy
+but not codon-block topology.
+
+Percentiles use Laplace smoothing: `(count + 1) / (n + 1)`.
+
+## Canonical results
+
+| File | Condition | Key result |
+|------|-----------|------------|
+| `phase1_demo.json` | triplet, 6 raw features, 100K | sanity check |
+| `phase2_triplet.auto.json` | triplet, 8 PCs, 1M | 0/1M on E and N |
+| `phase2_doublet.raa10.json` | doublet, 10 classes, 1M | E: 0.13%, N: 0.018% |
+| `phase2_quadruplet.auto.json` | quadruplet, 8 PCs, 1M | 0/1M on E and N |
+| `publication_controls.json` | 2×2 factorial, 1M per condition | architecture:alphabet = 6.3:1 |
+| `sgc_baselines.json` | SGC metric values for figures | — |
+
+The `null_distributions.npz` file (46 MB, gitignored) contains the raw 1M null
+distributions for all conditions; regenerate with `run_publication_controls.py`.
+
+## Tests
+
+```bash
+python -m pytest tests/ -v
+# 8 tests: graph construction, codon loading, synonymy regression, doublet class count
+```
+
+## License
+
+[To be specified]
