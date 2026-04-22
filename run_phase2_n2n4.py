@@ -19,6 +19,19 @@ Design:
     • NOTE: This evaluates "longer code with extra dimension" under the triplet
       AA usage, and randomized deg-preserving alternatives on the 4-mer graph.
 
+    !!! n=4 IS EXPLORATORY ONLY — NOT A MANUSCRIPT FACTORIAL CELL !!!
+    The projection `AA(b1 b2 b3 b4) := AA_SGC(b1 b2 b3)` makes position 4
+    100 % synonymous by construction — every b4 substitution preserves
+    the amino acid. The constructed "quadruplet SGC" therefore has a
+    gifted fully-synonymous position that random 4-mer codes do not
+    automatically share. The resulting z-score (count_le = 0/10^6 in
+    `results/phase2_quadruplet.auto.json`) is dominated by this
+    construction artefact, not by any biological property of a
+    hypothetical quadruplet genetic code. n=4 is kept for exploratory
+    / sanity-check runs and is deliberately excluded from the 2×2
+    factorial in `run_publication_controls.py`; see the docstring of
+    that script for the full rationale.
+
 Metrics:
   • Dirichlet energy (E) on the Hamming graph of size 4^n
   • Receiver/noise distortion (N) using generalized proxy with wobble positions:

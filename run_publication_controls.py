@@ -9,6 +9,36 @@ three tasks:
 
 computes both raw distortion (D) and Dirichlet energy (E) per shuffle
 to avoid duplicating work and to check metric concordance.
+
+Factorial structure — why n=4 is NOT a cell:
+    The factorial is {10 AA, 20 AA} × {n=2, n=3}. The 20-AA × n=2 cell is
+    structurally impossible (4^2 = 16 codons, minus 3 stops = 13 sense
+    codons, which cannot encode 20 amino acids), so the factorial is
+    triangular: conditions A (10-AA doublet), C (10-AA triplet), B (20-AA
+    SGC). n=4 is excluded for three deliberate reasons:
+
+      1. No biological SGC at n=4 — all extant life uses triplet codons.
+         The doublet comparator (condition A) is a principled
+         majority-vote projection of the real SGC onto its first two
+         positions; quadruplet would require inventing a 4-position code
+         from scratch, with no principled reduction from biology.
+      2. The specific n=4 construction implemented in run_phase2_n2n4.py
+         (`AA(b1 b2 b3 b4) := AA_SGC(b1 b2 b3)`, duplicated along b4)
+         makes position 4 100 % synonymous by design: every single-base
+         substitution at b4 is silent. This gifts the constructed SGC a
+         fully synonymous position that random codes on the 4-mer graph
+         do not automatically have. The resulting z-score (0/10^6 beyond
+         null, see results/phase2_quadruplet.auto.json) is dominated by
+         this construction artefact, not by any biological property.
+      3. The factorial's question is whether triplet architecture is
+         optimized relative to a SIMPLER (more constrained) architecture.
+         n=2 is the right comparator; n=4 would test whether a longer
+         code could be even better if it existed, which is a different
+         question and not one the SGC-optimality claim needs to answer.
+
+    n=4 machinery is kept in run_phase2_n2n4.py for exploratory work and
+    as a sanity check that the SGC remains extreme when embedded in a
+    4-mer graph — but its numbers should not be read as a factorial cell.
 """
 
 import os, sys, json, random

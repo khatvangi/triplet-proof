@@ -129,6 +129,50 @@ The existing non-manuscript-numbered scripts remain in place:
 These can be deleted once the manuscript is frozen; they are not referenced
 by the manuscript figures but may be useful for exploratory re-plots.
 
+## Why n=4 is not a manuscript factorial cell (2026-04-22)
+
+The 2 × 2 factorial is {10 AA, 20 AA} × {n=2, n=3}. The 20-AA × n=2 cell
+is structurally impossible (13 sense codons cannot encode 20 amino
+acids), making the factorial triangular: Conditions A, B, C only. n=4
+machinery exists in `run_phase2_n2n4.py` and a 10⁶ sanity run is stored
+as `results/phase2_quadruplet.auto.json`, but n=4 is deliberately
+excluded from the main factorial.
+
+Reasons:
+
+1. **No biological SGC at n=4.** All extant life uses triplet codons.
+   Doublet (Condition A) is a principled majority-vote projection of
+   the real SGC onto its first two positions. Quadruplet requires
+   inventing a 4-position code from scratch — any construction choice
+   is arbitrary and the result depends on that choice.
+
+2. **The chosen n=4 construction gifts a fully-synonymous position.**
+   `run_phase2_n2n4.py` builds the n=4 baseline as
+   `AA(b1 b2 b3 b4) := AA_SGC(b1 b2 b3)` — duplicating the SGC along
+   position 4. This makes every position-4 substitution synonymous
+   **by design**. The "constructed quadruplet SGC" therefore has a
+   100% synonymous position that random 4-mer codes do not automatically
+   have. The z-score that comes out (0 / 10⁶) is dominated by this
+   artefact, not by any biological property of a hypothetical
+   quadruplet genetic code.
+
+3. **The factorial question is about triplet vs. shorter, not triplet
+   vs. longer.** The manuscript claim is that triplet architecture is
+   optimized relative to a simpler alternative. The doublet comparator
+   (n=2) tests that. A quadruplet comparator (n=4) tests a different
+   question — whether a hypothetical longer code could do better — and
+   the answer depends on the arbitrary construction choice in point 2.
+
+4. **The sanity-check number** (`phase2_quadruplet.auto.json`:
+   count_le_E = 0/10⁶, count_le_N = 0/10⁶) confirms the SGC-projected
+   quadruplet lies outside its null, consistent with "architecture
+   helps" in general, but adds no architectural-vs-alphabet evidence
+   the doublet comparison does not already provide.
+
+Cross-refs: docstrings of `run_publication_controls.py` and
+`run_phase2_n2n4.py` contain the same rationale for readers of the
+code.
+
 ## Items left alone but worth flagging
 
 1. **Journal confirmation.** Repo and filenames say JME (Journal of Molecular
