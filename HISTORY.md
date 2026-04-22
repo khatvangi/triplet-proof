@@ -1,3 +1,28 @@
+## 2026-04-22 (session wrap)
+
+**Q:** Clean the repo, delete superseded figure scripts, commit, push, and
+document why n=4 is not in the 2×2 factorial.
+
+**A:** Repo consolidated and pushed to `origin/main`. Two commits:
+- `3941a48` "Consolidate figures to canonical fig1-fig4, add defense
+  materials" — replaced 9 exploratory figure scripts + 18 images with
+  the canonical `fig1.py`–`fig4.py` set (each with `.pdf`, `.png`,
+  `_caption.txt`); added `run_sensitivity_extra_seeds.py`,
+  `run_preempt_metrics.py`, `build_table_s1.py`,
+  `supplementary_materials_JME.md`, `literature_comparison.md`,
+  `rebuild_notes.md`; updated `.gitignore` and `CLAUDE.md`.
+- `41c451b` "Document why n=4 is excluded from the main factorial" —
+  added rationale to docstrings of `run_publication_controls.py` and
+  `run_phase2_n2n4.py`, plus `rebuild_notes.md`. Core reason: the n=4
+  baseline `AA(b1 b2 b3 b4) := AA_SGC(b1 b2 b3)` makes position 4
+  100 % synonymous by construction, so its z-score is a construction
+  artefact rather than a biological property. n=4 machinery stays in
+  the repo for exploratory use but is explicitly not a factorial cell.
+
+Final repo state: `figures/` contains exactly 5 figure sets
+(fig1–fig4 + figS1) at 20 files total; top-level has one clean
+pipeline of entry-point scripts; all 8 tests pass. Submission-ready.
+
 ## 2026-04-22
 
 **Q:** Pre-compute the two defensive metrics: f⁺ L² f (Tlusty-style squared
