@@ -2,18 +2,29 @@
 
 ## Table S1. Sensitivity of Condition C (10 amino acids on triplet codons) to representative-set choice
 
-Condition C was re-evaluated using three representative-selection rules for each reduced-alphabet class: closest to centroid, farthest from centroid, and random class member. Values below are taken from `results/publication_controls.json`.
+Condition C was re-evaluated using three representative-selection rules for each reduced-alphabet (RAA10) class: closest to centroid, farthest from centroid, and random class member. Each entry is computed against its own 100 000-shuffle null distribution. For the random strategy, three independent seeds (1, 2, 42) were run and the reported value is the mean across seeds; SD is the sample standard deviation across the three seeds. Values below match `supplementary/table_S1.csv` and `supplementary/table_S1.tex`.
 
-| Representative set | Distortion z | Dirichlet z | D-E correlation |
-|--------------------|-------------:|------------:|----------------:|
-| Closest to centroid | -14.87 | -13.41 | 0.958 |
-| Farthest from centroid | -14.57 | -13.12 | 0.965 |
-| Random class member | -15.08 | -13.73 | 0.955 |
+| Representative set | Distortion z (D) | Dirichlet z (E) | D–E correlation |
+|---|---:|---:|---:|
+| Closest to centroid (main text) | −14.79 | −13.34 | 0.958 |
+| Farthest from centroid | −14.61 | −13.18 | 0.965 |
+| Random class member (mean ± SD, 3 seeds) | −15.17 ± 0.16 | −14.09 ± 0.54 | 0.961 ± 0.008 |
 
-Range across representative sets:
+Individual random-seed values:
 
-- Distortion z range: 0.51
-- Dirichlet z range: 0.61
+- D z-scores: {seed 42: −15.09, seed 1: −15.36, seed 2: −15.07}
+- E z-scores: {seed 42: −13.74, seed 1: −14.71, seed 2: −13.83}
+- D–E correlations: {seed 42: 0.955, seed 1: 0.969, seed 2: 0.958}
+
+Ranges across representative strategies (using the random-strategy mean for the random row):
+
+- Distortion z-score range: **0.56**
+- Dirichlet z-score range: **0.92**
+
+Note on the "<0.5 units" wording: an earlier draft of the Methods stated that the sensitivity z-score range was below 0.5 units. That claim held only under a single random-seed comparison. With three random seeds, the random-strategy mean shifts, and both ranges exceed 0.5. The values above are the honest numbers; recommended Methods wording is "z-score ranges are 0.56 (D) and 0.92 (E), small compared to the ~15 SD displacement of the SGC from its null".
+
+Sources: `results/publication_controls.json` (closest, farthest, random seed 42) and `results/sensitivity_extra_seeds.json` (random seeds 1 and 2). See `build_table_s1.py` for the aggregation script and `supplementary/table_S1_summary.json` for the machine-readable numeric summary.
+
 
 ## Table S2. Physicochemical descriptor set used for PCA
 

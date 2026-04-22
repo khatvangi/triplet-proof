@@ -1,0 +1,23 @@
+Figure 3. Triplet architecture enables deep optimization; reduced alphabet
+size does not. (a) Null distributions of noise distortion D across 10⁶
+degeneracy-preserving random codes for three conditions, on a shared x-axis:
+Condition A (blue; 10 amino acids, n = 2 doublet code obtained by majority-
+vote projection of the SGC onto the first two codon positions under the RAA10
+reduced alphabet), Condition C (green; 10 amino acids, n = 3 triplet with
+RAA10 applied to the sense codons), and Condition B (red; 20 amino acids,
+n = 3 — the SGC itself). Vertical lines mark the observed value for the
+corresponding code. The doublet SGC projection (A) sits well within its null
+tail (z_D = −3.8); the triplet conditions both lie beyond their nulls
+(z_D = −14.8 for C, z_D = −16.6 for B). The B and C null distributions
+substantially overlap, indicating the architectural shift from n = 2 to
+n = 3 is the dominant determinant of where the observed codes sit relative
+to their randomized backgrounds. (b) Position-specific synonymous fraction
+for each condition: the fraction of single-nucleotide substitutions at each
+codon position that preserve the coded amino acid (or RAA class). In the
+triplet codes (B and C), position 3 absorbs a majority of substitutions as
+synonymous (68.9 % for SGC, 76.5 % for RAA10 triplet), creating an error-
+buffering corridor. The doublet code has no dedicated synonymy position
+(33.3 % at pos 1, 8.3 % at pos 2; pos 3 is absent). N/A = not applicable
+(condition A has no third position). Raw z-scores are reported; no inter-
+condition z-score differences (Δz) are computed because z-scores against
+different null models are not directly comparable.

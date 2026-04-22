@@ -8,6 +8,12 @@ __pycache__/
 results/null_distributions.npz
 results/null_*.npy
 
+# run logs (JSON outputs are the artefact; .log is regenerated on every run)
+results/*.log
+
+# intermediate CSV rebuilt by build_aa_props.py from src/io/aa_props_lib.py
+data/processed/_aa_props_full.csv
+
 # OS
 .DS_Store
 nohup.out

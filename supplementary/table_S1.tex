@@ -1,0 +1,15 @@
+% Table S1 — representative-strategy sensitivity (Condition C, 10-AA triplet)
+\begin{table}[htbp]
+\centering
+\caption{Sensitivity of the 10-AA triplet z-score (Condition C) to the choice of representative amino acid for each reduced-alphabet (RAA10) group. Noise distortion z-score range across strategies: 0.56 units. Dirichlet energy z-score range: 0.92 units. Each entry is computed against its own 100{,}000-shuffle null distribution. SD is the sample standard deviation across the three random seeds.}
+\label{tab:S1}
+\begin{tabular}{lccp{5cm}}
+\toprule
+Strategy & Noise $z_D$ & Dirichlet $z_E$ & Notes \\
+\midrule
+Closest to centroid (main text) & -14.79 & -13.34 & \small single deterministic choice per class \\
+Farthest from centroid & -14.61 & -13.18 & \small single deterministic choice per class \\
+Random member (mean ± SD, 3 seeds) & -15.17 $\pm$ 0.16 & -14.09 $\pm$ 0.54 & \small seeds 1,\, 2,\, 42; individual values: D= [-15.09,\, -15.36,\, -15.07],\, E= [-13.74,\, -14.71,\, -13.83] \\
+\bottomrule
+\end{tabular}
+\end{table}

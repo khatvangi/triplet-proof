@@ -1,0 +1,16 @@
+Figure 1. Framework. (a) Codon Hamming graph for n = 3: all 61 sense codons,
+with edges connecting codons that differ by a single nucleotide substitution
+(264 edges; average degree 8.6). Nodes are colored by amino acid chemical class
+(10-class RAA10 grouping, Murphy 2000); five peripheral anchor codons are
+labeled for orientation. (b) 20 amino acids in PC1–PC2 space of the 22-property
+descriptor set (after correlation-pruning and z-scoring; PC1 = 35.9 % of
+variance, PC2 = 24.0 %; 97.1 % total in the retained eight PCs used downstream).
+Hydrophobic residues (Phe, Trp, Tyr, Ile, Leu, Val, Met) lie at negative PC1;
+charged residues (Lys, Arg, Asp, Glu) occupy positive PC1. Class color scheme
+matches panel (a). (c) Hamming-1 neighborhood of the Ala codon GCU with
+edge-wise property distances ‖Δf‖ computed in the 8-PC space: all three
+position-3 neighbors (GCA, GCC, GCG) are synonymous with ‖Δf‖ = 0 (blue
+edges); the six position-1 and position-2 neighbors are non-synonymous with
+‖Δf‖ ranging from 3.5 (UCU → Ser) to 4.9 (GGU → Gly, GAU → Asp) (red edges).
+Dirichlet energy E sums squared ‖Δf‖ over all graph edges; noise distortion
+D averages ‖Δf‖ over non-synonymous neighbors per codon.

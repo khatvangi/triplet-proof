@@ -1,0 +1,19 @@
+{
+  "D_range_across_strategies": 0.558,
+  "E_range_across_strategies": 0.915,
+  "random_D_individual_seeds": [
+    -15.091226575154304,
+    -15.357776016906524,
+    -15.070126310105142
+  ],
+  "random_E_individual_seeds": [
+    -13.736035976394035,
+    -14.711735882741115,
+    -13.830677928289932
+  ],
+  "random_D_mean": -15.173,
+  "random_D_sd": 0.16,
+  "random_E_mean": -14.093,
+  "random_E_sd": 0.538,
+  "n_sensitivity_per_run": 100000
+}

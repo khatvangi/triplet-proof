@@ -1,0 +1,18 @@
+Figure 4. Wobble-position synonymy is the mechanism by which triplet
+architecture buffers single-nucleotide errors. (a) Hamming-1 neighborhood
+of GCU (Ala) in the SGC. Each neighbor differs from GCU by exactly one base
+(the substituted base is shown in bold in the edge color). The three
+position-3 neighbors (GCA, GCC, GCG) all encode Ala and are therefore
+synonymous with GCU (blue edges). All six position-1 and position-2
+neighbors encode different amino acids (red edges). The wobble position
+converts all three position-3 substitutions into silent changes; positions
+1 and 2 convert none, for a neighborhood synonymy rate of 3/9 (33 %).
+(b) Hamming-1 neighborhood of GC (Ala/Gly), the doublet-projection analogue
+of GCU under the RAA10 alphabet. The doublet code has six neighbors (three
+at each of its two positions). Only GG (which the majority-vote projection
+also assigns to Ala/Gly) is synonymous; the other five neighbors cross class
+boundaries. Synonymy rate 1/6 (17 %), with no position providing dedicated
+wobble tolerance. This explains the mechanism behind the architecture effect
+in Figure 3: the third codon position in triplet codes supplies a systematic
+error-absorbing channel that has no analogue in doublet codes, regardless
+of alphabet size.
