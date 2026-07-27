@@ -15,7 +15,7 @@ Three commits pushed:
 - `f480395` licensing + citation metadata — `LICENSE` (MIT, code),
   `LICENSE-CC-BY-4.0.md` (manuscript/figures/data), `CITATION.cff`,
   `.zenodo.json`
-- `bd2ac0f` reverted `LICENSE` to verbatim MIT after GitHub returned
+- `3acb03b` reverted `LICENSE` to verbatim MIT after GitHub returned
   NOASSERTION; the appended scope note had broken licensee detection
 
 Decisions taken: include everything (cover letter included, reviewer slots
