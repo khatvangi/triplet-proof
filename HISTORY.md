@@ -41,6 +41,44 @@ while the toggle is off. After that: tag v1.0.0, read the concept DOI, and
 write it into the manuscript's Data/Code Availability placeholders (lines
 ~167 and ~171), README, and CITATION.cff, then tag v1.0.1.
 
+**Q:** The `jme/` directory was uploaded with all the files. Correct the name
+to Ribbeck (not Rebbeck), and create one file with the figures and the
+supplementary as PDFs.
+
+**A:** Surname corrected across manuscript, cover letter, both licence
+copyright lines, `CITATION.cff` and `.zenodo.json` (`1a2c3f5`). The two
+uploaded `.docx` were patched at the XML level rather than regenerated, so
+the uploaded formatting survives; both re-verified for zip integrity and
+readable content.
+
+New `scripts/build_submission_pdfs.py` (`80bff3c`) emits three files into
+`jme/`: `figures_JME.pdf` (4 pp), `supplementary_materials_JME.pdf` (4 pp)
+and `figures_and_supplementary_JME.pdf` (8 pp). Figure pages embed the
+vector `figures/figN.pdf`, not the PNG, so figure text stays selectable.
+Captions are composed with PyMuPDF in DejaVu Sans; prose and tables go
+through pandoc → docx → LibreOffice, which is the only local renderer that
+survives the manuscript's unicode (no xelatex/lualatex here, and pandoc's
+pdflatex path dies in the `bookmark` package).
+
+**Found and fixed a real defect in the figures** (`00dc692`): `fig1.py`,
+`fig2.py` and `fig3.py` called `savefig` without `bbox_inches="tight"`,
+unlike `fig4.py` and `figS1`. On a fixed canvas anything outside the axes
+box is cropped — fig1's (a)/(b)/(c) panel labels sit at y=1.02 in axes
+coords and all had bounding boxes at y0 = −4.91, so their ascenders were
+cut off (visible on "b"); fig2's rotated y-axis label reached x0 = −4.41
+and lost its leading points. All three regenerated, zero out-of-bounds text
+across all five figures now.
+
+Also corrected in `supplementary_materials_JME.md`: stale title ("in" →
+"of" the genetic code), merged title lines, Table S1's collapsing first
+column ("Representative set" broke mid-word), and the manifest missing the
+`table_S2` files.
+
+**Still open:** the root-level `supplementary_materials_JME.pdf` is now a
+stale duplicate (old title, 3 pp, Figure S1 not embedded) superseded by the
+`jme/` version — left in place pending a decision. Zenodo webhook still not
+enabled.
+
 ## 2026-04-22 (session wrap)
 
 **Q:** Clean the repo, delete superseded figure scripts, commit, push, and
