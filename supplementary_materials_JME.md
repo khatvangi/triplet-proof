@@ -1,6 +1,6 @@
 # Supplementary Materials
 
-*Companion to "Triplet architecture enables deep error-minimization in the genetic code"*
+*Companion to "Triplet architecture enables deep error-minimization of the genetic code"*\
 *Submitted to the Journal of Molecular Evolution.*
 
 
@@ -9,7 +9,7 @@
 Condition C (10-class triplet code at n = 3) was re-evaluated using three strategies for selecting one representative amino acid per RAA10 class: closest to centroid (used in the main text), farthest from centroid, and random class member. For the random strategy, three independent seeds (1, 2, 42) were run and the reported value is the mean across seeds ± sample standard deviation. Each entry was computed against its own 100 000-shuffle null distribution.
 
 | Representative set | Distortion z (D) | Dirichlet z (E) | D–E correlation |
-|---|---:|---:|---:|
+|------------------------------|------------:|------------:|------------:|
 | Closest to centroid (main text) | −14.79 | −13.34 | 0.958 |
 | Farthest from centroid | −14.61 | −13.18 | 0.965 |
 | Random class member (mean ± SD, 3 seeds) | −15.17 ± 0.16 | −14.09 ± 0.54 | 0.961 ± 0.008 |
@@ -85,6 +85,8 @@ Tables (raw data and typeset versions):
 - `supplementary/table_S1.csv` — Table S1 raw values (closest, farthest, random-seeds mean ± SD)
 - `supplementary/table_S1.tex` — Table S1 in LaTeX booktabs format
 - `supplementary/table_S1_summary.json` — machine-readable numeric summary including per-seed values
+- `supplementary/table_S2.csv` — Table S2 descriptor set as raw values
+- `supplementary/table_S2.tex` — Table S2 in LaTeX booktabs format
 
 Figures:
 
