@@ -1,3 +1,46 @@
+## 2026-07-26
+
+**Q:** The project is done — set up GitHub and Zenodo.
+
+**A:** GitHub side complete; Zenodo blocked on one manual browser step.
+
+Found the remote already existed and was public, with `main` in sync at
+`b4b79c9` — so the work was committing the outstanding changes and adding
+release infrastructure, not creating a repo.
+
+Three commits pushed:
+- `0785171` submission package — author details, revised manuscript,
+  Table S2, regenerated fig4/figS1, plus new `jme/` (pandoc .docx +
+  per-panel SVGs), `share/` CSV export, `scripts/`
+- `f480395` licensing + citation metadata — `LICENSE` (MIT, code),
+  `LICENSE-CC-BY-4.0.md` (manuscript/figures/data), `CITATION.cff`,
+  `.zenodo.json`
+- `bd2ac0f` reverted `LICENSE` to verbatim MIT after GitHub returned
+  NOASSERTION; the appended scope note had broken licensee detection
+
+Decisions taken: include everything (cover letter included, reviewer slots
+still empty since none chosen); MIT + CC-BY-4.0 split; archive the 9 MB
+`share/` CSVs rather than the 46 MB gitignored `.npz`, which stays
+regenerate-only. `share/*.zip` gitignored as a duplicate of the tracked
+directory.
+
+**Two README errors found and fixed while preparing the archive**: it led
+with "shifts the z-score by 11.0 units" and "6.3:1", the Δz framing the
+manuscript explicitly declines to use ("not strictly commensurable across
+architectures"); and its figure commands named
+`fig1_optimization_factorial.py` / `fig2_wobble_mechanism.py`, deleted back
+in `3941a48`. Also corrected the title to "of the genetic code".
+
+Verified before pushing: 8/8 tests pass, `.zenodo.json` and `CITATION.cff`
+parse, both `jme/*.docx` carry no tracked changes and blank creator
+metadata.
+
+**Still outstanding:** Zenodo's GitHub webhook must be enabled manually at
+zenodo.org before any release is cut — Zenodo ignores releases created
+while the toggle is off. After that: tag v1.0.0, read the concept DOI, and
+write it into the manuscript's Data/Code Availability placeholders (lines
+~167 and ~171), README, and CITATION.cff, then tag v1.0.1.
+
 ## 2026-04-22 (session wrap)
 
 **Q:** Clean the repo, delete superseded figure scripts, commit, push, and
