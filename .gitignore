@@ -14,6 +14,10 @@ results/*.log
 # intermediate CSV rebuilt by build_aa_props.py from src/io/aa_props_lib.py
 data/processed/_aa_props_full.csv
 
+# convenience zip duplicating share/triplet-proof-figure-data/ (rebuild with
+# scripts/export_for_colleague.py); the unpacked directory is the tracked copy
+share/*.zip
+
 # OS
 .DS_Store
 nohup.out

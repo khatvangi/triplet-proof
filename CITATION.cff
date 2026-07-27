@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite it using the metadata below."
+title: "triplet-proof: Monte Carlo framework for genetic code error-minimization"
+abstract: >-
+  Monte Carlo framework quantifying error-minimization in the standard genetic
+  code (SGC) using two graph-theoretic metrics on the codon Hamming graph:
+  Dirichlet energy and receiver noise distortion, scored against 8 PCA-derived
+  amino acid physicochemical properties. A 2 x 2 factorial design crosses codon
+  length (n = 2 vs n = 3) with alphabet size (10 vs 20 amino acids), scoring
+  each condition against a degeneracy-preserving null of 1,000,000 random codes.
+  The SGC lies beyond all 10^6 random codes on both metrics, and triplet
+  architecture crosses an optimization threshold that doublet architecture does
+  not, independently of alphabet size.
+type: software
+authors:
+  - family-names: Rebbeck
+    given-names: "Hannah E."
+    affiliation: "Department of Chemistry and Physics, McNeese State University, Lake Charles, LA 70609, USA"
+  - family-names: Paudyal
+    given-names: "J."
+    affiliation: "Department of Chemistry and Physics, McNeese State University, Lake Charles, LA 70609, USA"
+  - family-names: Kiran
+    given-names: Boggavarapu
+    email: kiran@mcneese.edu
+    affiliation: "Department of Chemistry and Physics, McNeese State University, Lake Charles, LA 70609, USA"
+repository-code: "https://github.com/khatvangi/triplet-proof"
+version: 1.0.0
+date-released: "2026-07-26"
+license: MIT
+license-url: "https://github.com/khatvangi/triplet-proof/blob/main/LICENSE"
+keywords:
+  - genetic code
+  - error minimization
+  - codon
+  - Monte Carlo
+  - Dirichlet energy
+  - graph Laplacian
+  - rate-distortion
+  - molecular evolution
+  - wobble position
+  - codon degeneracy
