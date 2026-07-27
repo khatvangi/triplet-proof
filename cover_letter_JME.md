@@ -30,4 +30,4 @@ Department of Chemistry and Physics
 McNeese State University
 Lake Charles, LA 70609
 kiran@mcneese.edu
-on behalf of all authors: Hannah E. Rebbeck, J. Paudyal, Boggavarapu Kiran
+on behalf of all authors: Hannah E. Ribbeck, J. Paudyal, Boggavarapu Kiran

@@ -10,7 +10,7 @@ Triplet architecture and genetic code robustness
 
 # Authors
 
-Hannah E. Rebbeck^1^, J. Paudyal^1^, Boggavarapu Kiran^1,\*^
+Hannah E. Ribbeck^1^, J. Paudyal^1^, Boggavarapu Kiran^1,\*^
 
 # Affiliations
 

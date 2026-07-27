@@ -2,7 +2,7 @@
 
 SPDX-License-Identifier: CC-BY-4.0
 
-Copyright (c) 2026 Hannah E. Rebbeck, J. Paudyal, Boggavarapu Kiran
+Copyright (c) 2026 Hannah E. Ribbeck, J. Paudyal, Boggavarapu Kiran
 
 ## Scope
 
