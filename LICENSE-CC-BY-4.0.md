@@ -6,7 +6,14 @@ Copyright (c) 2026 Hannah E. Rebbeck, J. Paudyal, Boggavarapu Kiran
 
 ## Scope
 
-This license covers the non-software content of this repository:
+This repository is dual-licensed by content type. The `LICENSE` file contains
+the MIT License, which governs all **software**: Python source under `src/`,
+`tests/`, `figures/`, and `scripts/`, the top-level `run_*.py` and `build_*.py`
+drivers, and the SLURM batch scripts. `LICENSE` is kept as verbatim MIT text so
+that automated license detectors identify it correctly; this file records the
+scope split.
+
+The CC BY 4.0 terms below cover the non-software content of this repository:
 
 - `manuscript_JME.md`, `supplementary_materials_JME.md`,
   `supplementary_tables_JME.md`, `supplementary_materials_JME.pdf`
