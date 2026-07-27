@@ -163,8 +163,10 @@ ax_hx.text(-0.15, 1.02, "c", transform=ax_hx.transAxes,
 
 # ── save ──
 OUT.mkdir(exist_ok=True)
-fig.savefig(OUT / "fig2.pdf", dpi=300)
-fig.savefig(OUT / "fig2.png", dpi=300)
+# bbox_inches="tight" is required: the rotated y-axis label extends past the
+# left edge of a fixed canvas and loses its first few points
+fig.savefig(OUT / "fig2.pdf", dpi=300, bbox_inches="tight")
+fig.savefig(OUT / "fig2.png", dpi=300, bbox_inches="tight")
 print(f"saved: {OUT / 'fig2.pdf'}")
 print(f"saved: {OUT / 'fig2.png'}")
 plt.close(fig)

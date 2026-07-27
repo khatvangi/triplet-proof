@@ -173,8 +173,9 @@ ax_b.text(-0.18, 1.02, "b", transform=ax_b.transAxes,
 
 # ── save ──
 OUT.mkdir(exist_ok=True)
-fig.savefig(OUT / "fig3.pdf", dpi=300)
-fig.savefig(OUT / "fig3.png", dpi=300)
+# kept consistent with the other figure scripts so no artist can be clipped
+fig.savefig(OUT / "fig3.pdf", dpi=300, bbox_inches="tight")
+fig.savefig(OUT / "fig3.png", dpi=300, bbox_inches="tight")
 print(f"saved: {OUT / 'fig3.pdf'}")
 print(f"saved: {OUT / 'fig3.png'}")
 plt.close(fig)

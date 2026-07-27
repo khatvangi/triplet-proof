@@ -339,8 +339,10 @@ fig.legend(
 
 # ── save ──
 OUT.mkdir(exist_ok=True)
-fig.savefig(OUT / "fig1.pdf", dpi=300)
-fig.savefig(OUT / "fig1.png", dpi=300)
+# bbox_inches="tight" is required: the panel labels sit at y=1.02 in axes
+# coords, above the axes box, so a fixed canvas clips their ascenders
+fig.savefig(OUT / "fig1.pdf", dpi=300, bbox_inches="tight")
+fig.savefig(OUT / "fig1.png", dpi=300, bbox_inches="tight")
 print(f"saved: {OUT / 'fig1.pdf'}")
 print(f"saved: {OUT / 'fig1.png'}")
 plt.close(fig)
