@@ -1,0 +1,34 @@
+\begin{table}[htbp]
+\centering
+\caption{Physicochemical descriptor set used for PCA. Twenty-two descriptors reduced to 20 by correlation pruning ($|r|>0.95$); 8 PCs explain 97.10\% of variance.}
+\label{tab:S2}
+\small
+\begin{tabular}{r l l l l}
+\hline
+\# & Code & Property & Source/scale & Status \\
+\hline
+1 & \texttt{hydro\_kd} & Hydropathy & Kyte--Doolittle hydropathy index & Retained \\
+2 & \texttt{vol\_zam} & Residue volume (\AA{}$^3$) & Zamyatnin residue volumes & Retained \\
+3 & \texttt{polarity\_gr} & Polarity & Grantham polarity & Retained \\
+4 & \texttt{pI} & Isoelectric point & Standard pI & Retained \\
+5 & \texttt{sc\_pka} & Side-chain pKa & Side-chain pKa (0 if none) & Retained \\
+6 & \texttt{charge\_pH7} & Net charge at pH 7 & Formal side-chain charge (His ≈ +0.1) & Retained \\
+7 & \texttt{donors} & H-bond donors & Side-chain donor count & Retained \\
+8 & \texttt{acceptors} & H-bond acceptors & Side-chain acceptor count & Retained \\
+9 & \texttt{arom} & Aromaticity & Aromatic side chain (0/1) & Retained \\
+10 & \texttt{ring\_count} & Ring count & Number of ring systems in side chain & Retained \\
+11 & \texttt{rotb} & Rotatable bonds & Side-chain rotatable-bond count & Retained \\
+12 & \texttt{refractivity} & Molar refractivity & Amino-acid molar refractivity & Pruned (vol_zam ($r$=0.99)) \\
+13 & \texttt{bulkiness} & Bulkiness & Zimmerman bulkiness & Retained \\
+14 & \texttt{cf\_alpha} & $\alpha$-helix propensity & Chou--Fasman P($\alpha$) & Retained \\
+15 & \texttt{cf\_beta} & $\beta$-sheet propensity & Chou--Fasman P($\beta$) & Retained \\
+16 & \texttt{cf\_turn} & Turn propensity & Chou--Fasman P(turn) & Retained \\
+17 & \texttt{acc\_pref} & Solvent accessibility & Relative accessibility preference & Retained \\
+18 & \texttt{flex} & Flexibility & Normalized B-factor flexibility index & Retained \\
+19 & \texttt{helical\_moment} & Helical moment & Helix hydrophobic-moment proxy & Retained \\
+20 & \texttt{beta\_moment} & $\beta$-strand moment & $\beta$-strand moment proxy & Retained \\
+21 & \texttt{hphob\_fr} & Hydrophobic fraction & Hydrophobic surface-tendency proxy & Pruned (helical_moment ($r$=0.97)) \\
+22 & \texttt{sc\_mass} & Side-chain mass (Da) & Approx. side-chain mass & Retained \\
+\hline
+\end{tabular}
+\end{table}

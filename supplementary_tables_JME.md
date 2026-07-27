@@ -28,58 +28,33 @@ Sources: `results/publication_controls.json` (closest, farthest, random seed 42)
 
 ## Table S2. Physicochemical descriptor set used for PCA
 
-The local property library begins with 22 amino acid descriptors and retains 20 after correlation pruning. The retained standardized descriptors are listed below. PCA on this retained set yields 8 principal components explaining 97.1% of total variance.
+Amino acids were represented in an 8-dimensional physicochemical space derived by principal component analysis (PCA) of a curated descriptor library. The library begins with **22 descriptors** spanning hydrophobicity, size/volume, polarity and charge, hydrogen-bonding capacity, aromaticity, conformational (secondary-structure) propensity, flexibility, and solvent accessibility. Descriptors were z-scored, then **two were removed by correlation pruning** (Pearson |r| > 0.95 with a retained descriptor), leaving **20 retained descriptors**. PCA on the retained set yields **8 principal components explaining 97.10% of total variance**; each amino acid is represented by its 8-dimensional PC score vector (Fig. 1b).
 
-Retained descriptors:
+Descriptor sources follow canonical published scales, including AAindex-curated measures (Kawashima and Kanehisa 2000). The full 20 × 22 numeric descriptor matrix is provided in machine-readable form as `supplementary/table_S2.csv`.
 
-1. `hydro_kd_z`
-2. `vol_zam_z`
-3. `polarity_gr_z`
-4. `pI_z`
-5. `sc_pka_z`
-6. `charge_pH7_z`
-7. `donors_z`
-8. `acceptors_z`
-9. `arom_z`
-10. `ring_count_z`
-11. `rotb_z`
-12. `bulkiness_z`
-13. `cf_alpha_z`
-14. `cf_beta_z`
-15. `cf_turn_z`
-16. `acc_pref_z`
-17. `flex_z`
-18. `helical_moment_z`
-19. `beta_moment_z`
-20. `sc_mass_z`
+| # | Descriptor code | Property | Source / scale | Status |
+|---:|---|---|---|---|
+| 1 | `hydro_kd` | Hydropathy | Kyte–Doolittle hydropathy index | Retained |
+| 2 | `vol_zam` | Residue volume (Å³) | Zamyatnin residue volumes | Retained |
+| 3 | `polarity_gr` | Polarity | Grantham polarity | Retained |
+| 4 | `pI` | Isoelectric point | Standard pI | Retained |
+| 5 | `sc_pka` | Side-chain pKa | Side-chain pKa (0 if none) | Retained |
+| 6 | `charge_pH7` | Net charge at pH 7 | Formal side-chain charge (His ≈ +0.1) | Retained |
+| 7 | `donors` | H-bond donors | Side-chain donor count | Retained |
+| 8 | `acceptors` | H-bond acceptors | Side-chain acceptor count | Retained |
+| 9 | `arom` | Aromaticity | Aromatic side chain (0/1) | Retained |
+| 10 | `ring_count` | Ring count | Number of ring systems in side chain | Retained |
+| 11 | `rotb` | Rotatable bonds | Side-chain rotatable-bond count | Retained |
+| 12 | `refractivity` | Molar refractivity | Amino-acid molar refractivity | Pruned (redundant with vol_zam (r=0.99)) |
+| 13 | `bulkiness` | Bulkiness | Zimmerman bulkiness | Retained |
+| 14 | `cf_alpha` | α-helix propensity | Chou–Fasman P(α) | Retained |
+| 15 | `cf_beta` | β-sheet propensity | Chou–Fasman P(β) | Retained |
+| 16 | `cf_turn` | Turn propensity | Chou–Fasman P(turn) | Retained |
+| 17 | `acc_pref` | Solvent accessibility | Relative accessibility preference | Retained |
+| 18 | `flex` | Flexibility | Normalized B-factor flexibility index | Retained |
+| 19 | `helical_moment` | Helical moment | Helix hydrophobic-moment proxy | Retained |
+| 20 | `beta_moment` | β-strand moment | β-strand moment proxy | Retained |
+| 21 | `hphob_fr` | Hydrophobic fraction | Hydrophobic surface-tendency proxy | Pruned (redundant with helical_moment (r=0.97)) |
+| 22 | `sc_mass` | Side-chain mass (Da) | Approx. side-chain mass | Retained |
 
-Original descriptor pool before pruning:
-
-1. `hydro_kd`
-2. `vol_zam`
-3. `polarity_gr`
-4. `pI`
-5. `sc_pka`
-6. `charge_pH7`
-7. `donors`
-8. `acceptors`
-9. `arom`
-10. `ring_count`
-11. `rotb`
-12. `refractivity`
-13. `bulkiness`
-14. `cf_alpha`
-15. `cf_beta`
-16. `cf_turn`
-17. `acc_pref`
-18. `flex`
-19. `helical_moment`
-20. `beta_moment`
-21. `hphob_fr`
-22. `sc_mass`
-
-PCA summary:
-
-- Number of retained descriptors: 20
-- Number of PCs retained: 8
-- Variance explained: 0.9710
+*Two descriptors were dropped in correlation pruning: `refractivity` (r = 0.99 with `vol_zam`) and `hphob_fr` (r = 0.97 with `helical_moment`; r = 0.97 with `acc_pref`). Removing them eliminates redundant variance without discarding a distinct physicochemical axis.*

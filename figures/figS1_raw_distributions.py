@@ -104,9 +104,18 @@ for ax, (data, sgc, color, title, letter, stats) in zip(axes, panels):
     # -- x limits --
     ax.set_xlim(x_lo, x_hi)
 
-    # -- stats text box (top-right) --
-    ax.text(0.97, 0.95, stats, transform=ax.transAxes,
-            fontsize=6.5, verticalalignment="top", horizontalalignment="right",
+    # -- stats text box --
+    # place where the histogram isn't: if SGC is far below the null distribution
+    # (panels b, c), the empty real estate is between the SGC line and the start
+    # of the null distribution → anchor top-left, offset past the SGC vline.
+    # if SGC is inside or near the null (panel a), the right tail is sparse →
+    # keep top-right anchoring.
+    if sgc < null_lo:
+        box_x, box_ha = 0.22, "left"
+    else:
+        box_x, box_ha = 0.97, "right"
+    ax.text(box_x, 0.95, stats, transform=ax.transAxes,
+            fontsize=6.5, verticalalignment="top", horizontalalignment=box_ha,
             bbox=dict(boxstyle="round,pad=0.3", facecolor="white",
                       edgecolor="0.7", alpha=0.9))
 

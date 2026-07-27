@@ -40,9 +40,15 @@ RED = "#CC6677"    # non-synonymous / pos 1, 2
 BLUE_FILL = (*mpl.colors.to_rgb(BLUE), 0.15)
 RED_FILL = (*mpl.colors.to_rgb(RED), 0.15)
 
-NODE_FONT = 6
+NODE_FONT = 7
 LABEL_SIZE = 8
 ANNOT_SIZE = 7.5
+
+# per-node text layout constants — keep these consistent with R_outer below
+# so the codon row and AA row never overlap. char_w in data coords.
+CHAR_W = 0.22
+CODON_Y_OFFSET = 0.14     # codon row above node center
+AA_Y_OFFSET = -0.18        # AA row below node center
 
 
 def polar(cx, cy, angle_deg, r):
@@ -63,26 +69,24 @@ def draw_node(ax, xy, r, codon, sub_pos, aa, fill, edge, sub_color=None, lw=1.0)
     ax.add_patch(circ)
 
     # draw each codon character separately so the substituted one gets its color
-    # char width in data coords, approximate
-    char_w = 0.12
     n = len(codon)
-    total_w = char_w * n
-    start_x = xy[0] - total_w / 2 + char_w / 2
-    y = xy[1] + 0.05
+    total_w = CHAR_W * n
+    start_x = xy[0] - total_w / 2 + CHAR_W / 2
+    y = xy[1] + CODON_Y_OFFSET
     for i, ch in enumerate(codon):
         if i == sub_pos:
             color = sub_color
             weight = "bold"
-            fontsize = NODE_FONT + 1.5
+            fontsize = NODE_FONT + 1
         else:
             color = "black"
             weight = "bold"
-            fontsize = NODE_FONT + 0.5
-        ax.text(start_x + i * char_w, y, ch,
+            fontsize = NODE_FONT
+        ax.text(start_x + i * CHAR_W, y, ch,
                 ha="center", va="center",
                 fontsize=fontsize, fontweight=weight, color=color, zorder=4)
 
-    ax.text(xy[0], xy[1] - 0.07, aa,
+    ax.text(xy[0], xy[1] + AA_Y_OFFSET, aa,
             ha="center", va="center", fontsize=NODE_FONT - 0.5,
             color="0.3", zorder=4)
 
@@ -108,9 +112,9 @@ def draw_edge(ax, xy_from, xy_to, r_from, r_to, color, lw=1.0):
 
 def draw_panel_a(ax):
     cx, cy = 0.0, 0.0
-    R_center = 0.38
-    R_outer = 0.32
-    orbit = 1.75
+    R_center = 0.52
+    R_outer = 0.50
+    orbit = 2.20
     spread = 30
 
     # 3 sector groups: pos 1 (top), pos 2 (lower-left), pos 3 (lower-right)
@@ -186,9 +190,9 @@ def draw_panel_a(ax):
 
 def draw_panel_b(ax):
     cx, cy = 0.0, 0.0
-    R_center = 0.38
-    R_outer = 0.34
-    orbit = 1.60
+    R_center = 0.52
+    R_outer = 0.50
+    orbit = 2.00
     spread = 45
 
     # pos 1 (top), pos 2 (bottom)
@@ -252,7 +256,7 @@ def draw_panel_b(ax):
 # ═════════════════════════════════════════════════════════════
 
 def main():
-    fig, (ax_a, ax_b) = plt.subplots(2, 1, figsize=(3.5, 5.5))
+    fig, (ax_a, ax_b) = plt.subplots(2, 1, figsize=(4.5, 7.0))
     fig.subplots_adjust(hspace=0.28, top=0.94, bottom=0.08,
                         left=0.02, right=0.98)
 

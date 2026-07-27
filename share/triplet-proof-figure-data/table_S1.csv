@@ -1,0 +1,4 @@
+Strategy,Noise z,Dirichlet z,Notes
+Closest to centroid (main text),-14.79,-13.34,single deterministic choice per class
+Farthest from centroid,-14.61,-13.18,single deterministic choice per class
+"Random member (mean ± SD, 3 seeds)",-15.17 ± 0.16,-14.09 ± 0.54,"seeds 1, 2, 42; individual values: D=[-15.09, -15.36, -15.07], E=[-13.74, -14.71, -13.83]"

@@ -51,7 +51,8 @@
   - `results/phase2_doublet.raa10.json`
   - `results/phase2_quadruplet.auto.json`
   - `results/publication_controls.json`
-  - `results/alphabet_control.json`
+  - `results/preempt_metrics.json`
+  - `results/sensitivity_extra_seeds.json`
 - [ ] Repository snapshot archived (Zenodo or equivalent)
 - [ ] Commit or release tag recorded in manuscript notes
 
@@ -60,8 +61,7 @@
 - [ ] `python -m pytest -q` passes
 - [ ] No stale quantitative claims remain after final prose edits
 - [ ] Manuscript numbers match:
-  - `results/publication_controls.json`
-  - `results/alphabet_control.json`
+  - `results/publication_controls.json` (z-scores, tail probabilities, factorial architecture/alphabet effects)
 - [ ] README and manuscript are not in conflict on canonical outputs
 
 ## Remaining manual items in this repo
