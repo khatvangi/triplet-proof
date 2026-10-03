@@ -1,0 +1,3 @@
+old_raw20 s1 252
+old_raw20 s2 455
+stopped after s2 by hand: s1 (codon shuffle) and s2 (block null) are all table S3 needs; s3-s5 not run
