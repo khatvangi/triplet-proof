@@ -22,6 +22,16 @@ authors:
     affiliation: "Department of Chemistry and Physics, McNeese State University, Lake Charles, LA 70609, USA"
 repository-code: "https://github.com/khatvangi/triplet-proof"
 doi: "10.5281/zenodo.21614179"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.21614179"
+    description: "Concept DOI, all versions"
+  - type: doi
+    value: "10.5281/zenodo.23125462"
+    description: "Version DOI for v2.0.0 (JME revision)"
+  - type: doi
+    value: "10.5281/zenodo.21614180"
+    description: "Version DOI for v1.0.0 (original submission; conclusion withdrawn)"
 version: 2.0.0
 date-released: "2026-10-03"
 license: MIT
