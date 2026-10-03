@@ -1,5 +1,38 @@
 # triplet-proof
 
+## Version 2.0.0 (2026-10-03): revised manuscript
+
+Code and data for **"Error robustness of doublet and triplet genetic codes"**
+(Ribbeck, Paudyal, Kiran; revision of a submission to *Journal of Molecular Evolution*).
+
+**v2.0.0 withdraws the conclusion of v1.0.0.** The v1.0.0 z-scores came from a null
+that permuted amino-acid labels among individual codons rather than among synonymous
+blocks. With all amino acids equidistant, that null reproduces the published values
+(z = −17.07 for the standard code), so those z-scores measured synonym clustering, and
+the doublet-triplet contrast does not hold. The v1.0.0 text below is kept for the record.
+
+Revised results: the minimum per-residue misreading cost at fixed amino-acid usage does
+not depend on codon length (edge-isoperimetric bound; certified searches); a longer code
+gains only by silencing its noisiest position, which at in vitro rates is position 3.
+
+| Folder | Contents |
+|---|---|
+| `revision/` | manuscript, response to the reviewer, figures, supplementary material (PDF) |
+| `reviewer_response/descriptor_rebuild/` | AAindex-rebuilt descriptor matrix, frozen rules (`RULES.md`, `RULES.sha256`), table S3 runs (`stats.py`, `runs/`) |
+| `reviewer_response/arch_cert/`, `usage_cert/`, `rebuild_opt10/`, `rebuild_opt20/`, `n4/`, `finish/` | certified doublet, triplet and quadruplet optima (tables 1 and 3) |
+| `reviewer_response/position_rates/`, `position_model/`, `position_empirical/`, `rebuild_grid/`, `rebuild_grid2/` | position-specific misreading rates and the weight analyses (tables 2, S4, S5) |
+| `reviewer_response/rebuild_close/` | stop-codon variant, block-null gate, correlation-threshold check |
+| `paper_reanalysis/` | the reanalysis that found the null-model error |
+
+Third-party supplementary data are not redistributed (`reviewer_response/position_rates/raw/README.md`
+lists sources and checksums). An exploratory proteome-substitution analysis that is not
+part of the revised manuscript is withheld; `reviewer_response/error_budget/scripts/decode_split.py`
+is included only because `descriptor_rebuild/stats.py` imports it.
+
+---
+
+## Version 1.0.0 (original submission, withdrawn conclusion)
+
 Monte Carlo framework demonstrating that the standard genetic code (SGC) is
 statistically optimized for error-minimization, and that triplet codon
 architecture — not amino acid alphabet size — is the primary enabler.

@@ -1,0 +1,4 @@
+batch1 U: best=19.951600630 rand 1/512 warm 0/64 gap%=6.526 lift=20.284875 t=91s
+batch1 P: best=17.369449828 rand 2/512 warm 0/64 gap%=9.475 lift=18.865154 t=192s
+batch2 U: best=20.024916541 rand 1/512 warm 0/64 gap%=6.183 lift=20.284875 t=332s
+batch2 P: best=17.369449828 rand 3/512 warm 0/64 gap%=9.475 lift=18.865154 t=436s

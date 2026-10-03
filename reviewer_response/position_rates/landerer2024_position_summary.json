@@ -1,0 +1,414 @@
+{
+  "ecoli": {
+    "label": "ecoli: all events",
+    "n_psm_dropped_codon_origin_mismatch": 84,
+    "n_psm": 58906,
+    "n_unique_sites": 14779,
+    "n_datasets": 80,
+    "class_counts_psm": {
+      "multi": 16408,
+      "ambiguous:1/2": 14247,
+      "1": 13029,
+      "2": 10505,
+      "ambiguous:1/3": 2560,
+      "3": 2157
+    },
+    "class_counts_sites": {
+      "multi": 6071,
+      "1": 3363,
+      "2": 2737,
+      "ambiguous:1/2": 1445,
+      "ambiguous:1/3": 704,
+      "3": 459
+    },
+    "share_single_mismatch_psm": {
+      "1": 0.5071425791133082,
+      "2": 0.4088980576855708,
+      "3": 0.08395936320112102
+    },
+    "share_single_mismatch_sites": {
+      "1": 0.5127305991767037,
+      "2": 0.41728922091782283,
+      "3": 0.0699801799054734
+    },
+    "per_opportunity_all_pairs": {
+      "1": {
+        "n_psm": 13029,
+        "opportunities": 1321386951,
+        "eps": 9.86009434264498e-06
+      },
+      "2": {
+        "n_psm": 10505,
+        "opportunities": 1463200751,
+        "eps": 7.179465970626747e-06
+      },
+      "3": {
+        "n_psm": 2157,
+        "opportunities": 423679672,
+        "eps": 5.091110436849092e-06
+      },
+      "eps1_over_eps2": 1.3733743405129926,
+      "eps3_over_eps2": 0.7091210485122826
+    },
+    "per_opportunity_observed_pairs": {
+      "1": {
+        "n_psm": 13029,
+        "opportunities": 1071674818,
+        "eps": 1.2157605815834332e-05
+      },
+      "2": {
+        "n_psm": 10505,
+        "opportunities": 1320148050,
+        "eps": 7.957440834003428e-06
+      },
+      "3": {
+        "n_psm": 2157,
+        "opportunities": 348241127,
+        "eps": 6.1939840896506175e-06
+      },
+      "eps1_over_eps2": 1.5278286159393009,
+      "eps3_over_eps2": 0.7783889593225406
+    },
+    "top_pairs_by_position": {
+      "1": {
+        "GTT>I/L": 2835,
+        "GTC>I/L": 1910,
+        "GTG>M": 1116,
+        "TGC>G": 936,
+        "TGT>G": 565,
+        "CTG>V": 504,
+        "GCT>P": 362,
+        "GGC>S": 358
+      },
+      "2": {
+        "GGC>D": 2551,
+        "AGC>N": 2126,
+        "GTG>A": 710,
+        "ATG>T": 656,
+        "GTA>A": 604,
+        "GTT>A": 505,
+        "CTG>P": 206,
+        "GGT>A": 200
+      },
+      "3": {
+        "CAT>Q": 484,
+        "GAA>D": 398,
+        "AAT>K": 280,
+        "CAG>H": 248,
+        "CAA>H": 228,
+        "AAA>N": 134,
+        "CAC>Q": 82,
+        "ATT>M": 64
+      }
+    }
+  },
+  "ecoli_no_cys": {
+    "label": "ecoli: cys-origin events and cys codons removed",
+    "n_psm_dropped_codon_origin_mismatch": 84,
+    "n_psm": 40242,
+    "n_unique_sites": 13469,
+    "n_datasets": 80,
+    "class_counts_psm": {
+      "1": 11528,
+      "2": 10505,
+      "multi": 10008,
+      "ambiguous:1/2": 3484,
+      "ambiguous:1/3": 2560,
+      "3": 2157
+    },
+    "class_counts_sites": {
+      "multi": 5567,
+      "1": 3257,
+      "2": 2737,
+      "ambiguous:1/2": 745,
+      "ambiguous:1/3": 704,
+      "3": 459
+    },
+    "share_single_mismatch_psm": {
+      "1": 0.4765605622157916,
+      "2": 0.43427035965274907,
+      "3": 0.08916907813145929
+    },
+    "share_single_mismatch_sites": {
+      "1": 0.5047264838059817,
+      "2": 0.4241438090810476,
+      "3": 0.07112970711297072
+    },
+    "per_opportunity_all_pairs": {
+      "1": {
+        "n_psm": 11528,
+        "opportunities": 1310754750,
+        "eps": 8.794932843081439e-06
+      },
+      "2": {
+        "n_psm": 10505,
+        "opportunities": 1452568550,
+        "eps": 7.23201669208658e-06
+      },
+      "3": {
+        "n_psm": 2157,
+        "opportunities": 420135605,
+        "eps": 5.134056657730782e-06
+      },
+      "eps1_over_eps2": 1.2161106946427591,
+      "eps3_over_eps2": 0.7099066382615753
+    },
+    "per_opportunity_observed_pairs": {
+      "1": {
+        "n_psm": 11528,
+        "opportunities": 1064586684,
+        "eps": 1.0828615624502777e-05
+      },
+      "2": {
+        "n_psm": 10505,
+        "opportunities": 1316603983,
+        "eps": 7.978860869054503e-06
+      },
+      "3": {
+        "n_psm": 2157,
+        "opportunities": 348241127,
+        "eps": 6.1939840896506175e-06
+      },
+      "eps1_over_eps2": 1.357163109147681,
+      "eps3_over_eps2": 0.7762992977698842
+    },
+    "top_pairs_by_position": {
+      "1": {
+        "GTT>I/L": 2835,
+        "GTC>I/L": 1910,
+        "GTG>M": 1116,
+        "CTG>V": 504,
+        "GCT>P": 362,
+        "GGC>S": 358,
+        "CAC>D": 279,
+        "GTA>I/L": 279
+      },
+      "2": {
+        "GGC>D": 2551,
+        "AGC>N": 2126,
+        "GTG>A": 710,
+        "ATG>T": 656,
+        "GTA>A": 604,
+        "GTT>A": 505,
+        "CTG>P": 206,
+        "GGT>A": 200
+      },
+      "3": {
+        "CAT>Q": 484,
+        "GAA>D": 398,
+        "AAT>K": 280,
+        "CAG>H": 248,
+        "CAA>H": 228,
+        "AAA>N": 134,
+        "CAC>Q": 82,
+        "ATT>M": 64
+      }
+    }
+  },
+  "yeast": {
+    "label": "yeast: all events",
+    "n_psm_dropped_codon_origin_mismatch": 0,
+    "n_psm": 17765,
+    "n_unique_sites": 5870,
+    "n_datasets": 72,
+    "class_counts_psm": {
+      "multi": 10504,
+      "1": 3106,
+      "2": 2470,
+      "ambiguous:1/2": 857,
+      "3": 636,
+      "ambiguous:1/3": 192
+    },
+    "class_counts_sites": {
+      "multi": 3771,
+      "1": 949,
+      "2": 837,
+      "3": 137,
+      "ambiguous:1/2": 103,
+      "ambiguous:1/3": 73
+    },
+    "share_single_mismatch_psm": {
+      "1": 0.5,
+      "2": 0.3976175144880876,
+      "3": 0.10238248551191242
+    },
+    "share_single_mismatch_sites": {
+      "1": 0.49349973998959956,
+      "2": 0.43525741029641185,
+      "3": 0.07124284971398856
+    },
+    "per_opportunity_all_pairs": {
+      "1": {
+        "n_psm": 3106,
+        "opportunities": 1019509648,
+        "eps": 3.0465626353739026e-06
+      },
+      "2": {
+        "n_psm": 2470,
+        "opportunities": 1135723636,
+        "eps": 2.1748248620582552e-06
+      },
+      "3": {
+        "n_psm": 636,
+        "opportunities": 409267148,
+        "eps": 1.5539971950057424e-06
+      },
+      "eps1_over_eps2": 1.4008312524488222,
+      "eps3_over_eps2": 0.7145390059294424
+    },
+    "per_opportunity_observed_pairs": {
+      "1": {
+        "n_psm": 3106,
+        "opportunities": 681549844,
+        "eps": 4.55726023172562e-06
+      },
+      "2": {
+        "n_psm": 2470,
+        "opportunities": 824045750,
+        "eps": 2.9974063940017894e-06
+      },
+      "3": {
+        "n_psm": 636,
+        "opportunities": 346826963,
+        "eps": 1.833767462883213e-06
+      },
+      "eps1_over_eps2": 1.520401184452434,
+      "eps3_over_eps2": 0.6117847304765969
+    },
+    "top_pairs_by_position": {
+      "1": {
+        "GCT>P": 1348,
+        "GCC>P": 365,
+        "GTT>I/L": 186,
+        "CAC>D": 154,
+        "CTC>F": 149,
+        "GCA>P": 118,
+        "TTG>V": 105,
+        "GCG>P": 79
+      },
+      "2": {
+        "GGC>D": 386,
+        "GTA>A": 338,
+        "AGC>N": 335,
+        "GGA>E": 268,
+        "ATG>T": 157,
+        "GCA>E": 111,
+        "GGT>D": 100,
+        "GGT>V": 64
+      },
+      "3": {
+        "ATA>M": 257,
+        "GAA>D": 251,
+        "CAC>Q": 37,
+        "CAA>H": 35,
+        "CAT>Q": 29,
+        "ATT>M": 6,
+        "AAT>K": 4,
+        "GAG>D": 4
+      }
+    }
+  },
+  "yeast_no_cys": {
+    "label": "yeast: cys-origin events and cys codons removed",
+    "n_psm_dropped_codon_origin_mismatch": 0,
+    "n_psm": 14262,
+    "n_unique_sites": 5471,
+    "n_datasets": 72,
+    "class_counts_psm": {
+      "multi": 7863,
+      "1": 3081,
+      "2": 2470,
+      "3": 636,
+      "ambiguous:1/3": 192,
+      "ambiguous:1/2": 20
+    },
+    "class_counts_sites": {
+      "multi": 3476,
+      "1": 940,
+      "2": 837,
+      "3": 137,
+      "ambiguous:1/3": 73,
+      "ambiguous:1/2": 8
+    },
+    "share_single_mismatch_psm": {
+      "1": 0.49797963471795703,
+      "2": 0.3992241797316955,
+      "3": 0.1027961855503475
+    },
+    "share_single_mismatch_sites": {
+      "1": 0.49111807732497387,
+      "2": 0.4373040752351097,
+      "3": 0.07157784743991641
+    },
+    "per_opportunity_all_pairs": {
+      "1": {
+        "n_psm": 3081,
+        "opportunities": 1011288187,
+        "eps": 3.046609304455368e-06
+      },
+      "2": {
+        "n_psm": 2470,
+        "opportunities": 1127502175,
+        "eps": 2.1906831354892953e-06
+      },
+      "3": {
+        "n_psm": 636,
+        "opportunities": 406526661,
+        "eps": 1.564473037107891e-06
+      },
+      "eps1_over_eps2": 1.390711990748447,
+      "eps3_over_eps2": 0.7141484826186245
+    },
+    "per_opportunity_observed_pairs": {
+      "1": {
+        "n_psm": 3081,
+        "opportunities": 676068870,
+        "eps": 4.557228023233787e-06
+      },
+      "2": {
+        "n_psm": 2470,
+        "opportunities": 821305263,
+        "eps": 3.007407977610878e-06
+      },
+      "3": {
+        "n_psm": 636,
+        "opportunities": 346826963,
+        "eps": 1.833767462883213e-06
+      },
+      "eps1_over_eps2": 1.5153341539161924,
+      "eps3_over_eps2": 0.6097501491433764
+    },
+    "top_pairs_by_position": {
+      "1": {
+        "GCT>P": 1348,
+        "GCC>P": 365,
+        "GTT>I/L": 186,
+        "CAC>D": 154,
+        "CTC>F": 149,
+        "GCA>P": 118,
+        "TTG>V": 105,
+        "GCG>P": 79
+      },
+      "2": {
+        "GGC>D": 386,
+        "GTA>A": 338,
+        "AGC>N": 335,
+        "GGA>E": 268,
+        "ATG>T": 157,
+        "GCA>E": 111,
+        "GGT>D": 100,
+        "GGT>V": 64
+      },
+      "3": {
+        "ATA>M": 257,
+        "GAA>D": 251,
+        "CAC>Q": 37,
+        "CAA>H": 35,
+        "CAT>Q": 29,
+        "ATT>M": 6,
+        "AAT>K": 4,
+        "GAG>D": 4
+      }
+    }
+  }
+}

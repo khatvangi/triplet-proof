@@ -1,0 +1,18 @@
+proteome: {'source': 'https://web.expasy.org/docs/relnotes/relstat.html', 'release': '2026_03', 'date': '02-Sep-2026', 'fallback_used': False, 'sum_percent': 99.89}
+gate1: {'triplet_Dw': 21.26863988470667, 'triplet_expected': 21.268639884706705, 'triplet_absdiff': 3.552713678800501e-14, 'doublet_Dw': 18.937298834661, 'doublet_expected': 18.937298834660997, 'doublet_absdiff': 3.552713678800501e-15, 'pass': True} 
+gate2: {'projection': {'doublet_uniform9_n2': 21.63543090840501, 'lift_n3': 21.63543090840501}, 'n_random_labelings': 100, 'random_f': 'Dirichlet(1) over present classes', 'max_absdiff': 1.7763568394002505e-14, 'tolerance': 1e-12, 'pass': True}
+reference: {'doublet_projection': {'classes': ['X1', 'X2', 'X3', 'X4', 'X5', 'X6', 'X7', 'X9', 'X10'], 'missing': ['X8'], 'note': 'f renormalised over the 9 present classes', 'Dw_U': 21.63543090840501, 'Dw_P': 19.685651987067004}, 'sgc_triplet_projection_stops_excluded': {'Dw_U': 24.021366233469145, 'Dw_P': 21.01974734524418}}
+R1 n=2 k=4 U: best=3.000000000 random 512/512 p5=3.000000 p50=3.000000 G=nan (2.9s, t=14s)
+R1 n=2 k=8 U: best=5.000000000 random 512/512 p5=5.000000 p50=5.000000 G=nan (2.9s, t=17s)
+R1 n=2 k=10 U: best=5.400000000 random 512/512 p5=5.400000 p50=5.400000 G=nan (2.8s, t=20s)
+R1 n=2 k=16 U: best=6.000000000 random 512/512 p5=6.000000 p50=6.000000 G=nan (1.1s, t=21s)
+R2 n=2 k=10 U: best=20.017516292 random 272/512 p5=20.017516 p50=20.017516 G=nan (15.7s, t=37s)
+R3 n=2 k=10 P: best=18.835846661 random 211/512 p5=18.835847 p50=18.993532 G=nan (15.3s, t=52s)
+R1 n=3 k=4 U: best=3.000000000 random 512/512 p5=3.000000 p50=3.000000 G=0.000000 (26.3s, t=78s)
+R1 n=3 k=8 U: best=5.000000000 random 512/512 p5=5.000000 p50=5.000000 G=0.000000 (33.1s, t=112s)
+R1 n=3 k=10 U: best=5.400000000 random 511/512 p5=5.400000 p50=5.400000 G=0.000000 (35.0s, t=147s)
+R1 n=3 k=16 U: best=6.000000000 random 512/512 p5=6.000000 p50=6.000000 G=0.000000 (31.7s, t=179s)
+R2 n=3 k=10 U: best=20.017516292 random 68/512 warm 61/64 p5=20.017516 p50=20.182064 G=0.000000 (69.3s, t=248s)
+R3 n=3 k=10 P: best=18.766672019 random 68/512 warm 34/64 p5=18.766672 p50=19.026745 G=0.069175 (72.4s, t=321s)
+R4(R2) n=3 k=10 U: best=18.857417193 random 1/512 warm 0/64 p5=18.900427 p50=19.117787 G=1.160099 (65.7s, t=387s)
+R4(R3) n=3 k=10 P: best=17.383593506 random 8/512 warm 0/64 p5=17.442776 p50=17.626024 G=1.452253 (69.9s, t=456s)

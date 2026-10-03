@@ -1,0 +1,49 @@
+{
+ "stage": "s1A",
+ "vectors": "/storage/kiran-stuff/triplet-proof/reviewer_response/rebuild_close/VECTORS_r094.csv",
+ "result": {
+  "D": {
+   "sgc": 18.771381245011312,
+   "null_mean": 21.29436895809612,
+   "null_sd": 0.6753954981812449,
+   "z": -3.7355708172158306,
+   "p_strict_better": 9.1e-05,
+   "p_le": 9.1e-05,
+   "median": 21.32156166724522,
+   "n": 1000000
+  },
+  "E": {
+   "sgc": 626.8110679135038,
+   "null_mean": 696.4992144057542,
+   "null_sd": 23.166471812548252,
+   "z": -3.008146732749496,
+   "p_strict_better": 0.00122,
+   "p_le": 0.00122,
+   "median": 697.2022846480527,
+   "n": 1000000
+  },
+  "equidistant": {
+   "D": {
+    "sgc": 4.75,
+    "null_mean": 5.449692375,
+    "null_sd": 0.19119403361993112,
+    "z": -3.659593146043967,
+    "p_strict_better": 8.3e-05,
+    "p_le": 0.000562,
+    "median": 5.5,
+    "n": 1000000
+   },
+   "E": {
+    "sgc": 38.0,
+    "null_mean": 43.597539,
+    "null_sd": 1.529552268959449,
+    "z": -3.659593146043967,
+    "p_strict_better": 8.3e-05,
+    "p_le": 0.000562,
+    "median": 44.0,
+    "n": 1000000
+   }
+  }
+ },
+ "seconds": 51.7
+}

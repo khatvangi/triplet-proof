@@ -1,0 +1,11 @@
+{
+ "B_D": 23.9223597432532,
+ "B_absdiff": 4.325319835629671e-08,
+ "A_D": 18.937298834661007,
+ "A_absdiff": 3.466100650939552e-08,
+ "B_prior_full_precision": 23.9223597432532,
+ "A_prior_full_precision": 18.937298834660997,
+ "B_absdiff_full": 0.0,
+ "A_absdiff_full": 1.0658141036401503e-14,
+ "pass_1e-9_full_precision": true
+}

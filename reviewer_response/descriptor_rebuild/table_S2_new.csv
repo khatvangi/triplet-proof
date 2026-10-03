@@ -1,0 +1,23 @@
+concept,route,accession_or_rule,title,units,status,reason
+hydropathy_KD,AAindex1,KYTJ820101,"Hydropathy index (Kyte-Doolittle, 1982)",as in AAindex entry,kept,named source present in AAindex
+volume_Zamyatnin,AAindex1,BIGC670101,"Residue volume (Bigelow, 1967)",as in AAindex entry,kept,"Zamyatnin 1972 not in AAindex; Bigelow 1967 residue volume is the AAindex volume entry derived, like Zamyatnin's, from solution partial specific volumes"
+polarity_Grantham,AAindex1,GRAR740102,"Polarity (Grantham, 1974)",as in AAindex entry,kept,named source present in AAindex
+isoelectric_point,AAindex1,ZIMJ680104,"Isoelectric point (Zimmerman et al., 1968)",as in AAindex entry,kept,AAindex isoelectric point entry
+sidechain_pKa,none,,,,dropped,"no AAindex entry for side-chain pKa (FASG760104/5, JOND750102, FAUJ880113 are alpha-amino/carboxyl pKs); not computable by RDKit; no primary table saved -> DROPPED"
+net_charge_pH7,AAindex1,KLEP840101,"Net charge (Klein et al., 1984)",as in AAindex entry,kept,AAindex net charge entry
+hbond_donors,AAindex1,FAUJ880109,"Number of hydrogen bond donors (Fauchere et al., 1988)",as in AAindex entry,kept,AAindex entry titled 'Number of hydrogen bond donors'
+hbond_acceptors,RDKit,rdMolDescriptors.CalcNumHBA(free aa),RDKit 2026.03.1 on free-AA SMILES,count,kept,no AAindex acceptor-count entry; structure rule
+aromaticity,RDKit,1 if any aromatic atom in the molecule else 0,RDKit 2026.03.1 on free-AA SMILES,0/1,kept,no AAindex aromaticity indicator; structure rule
+ring_count,RDKit,rdMolDescriptors.CalcNumRings(free aa),RDKit 2026.03.1 on free-AA SMILES,count,kept,no AAindex ring-count entry; structure rule
+rotatable_bonds,RDKit,rdMolDescriptors.CalcNumRotatableBonds(free aa) (default strictness),RDKit 2026.03.1 on free-AA SMILES,count,kept,no AAindex rotatable-bond entry; structure rule
+molar_refractivity,AAindex1,MCMT640101,"Refractivity (McMeekin et al., 1964), Cited by Jones (1975)",as in AAindex entry,kept,AAindex refractivity entry (McMeekin 1964)
+bulkiness_Zimmerman,AAindex1,ZIMJ680102,"Bulkiness (Zimmerman et al., 1968)",as in AAindex entry,kept,named source present in AAindex
+chou_fasman_alpha,AAindex1,CHOP780201,"Normalized frequency of alpha-helix (Chou-Fasman, 1978b)",as in AAindex entry,kept,named source present in AAindex
+chou_fasman_beta,AAindex1,CHOP780202,"Normalized frequency of beta-sheet (Chou-Fasman, 1978b)",as in AAindex entry,kept,named source present in AAindex
+chou_fasman_turn,AAindex1,CHOP780203,"Normalized frequency of beta-turn (Chou-Fasman, 1978b)",as in AAindex entry,kept,named source present in AAindex
+solvent_accessibility,AAindex1,ROSG850102,"Mean fractional area loss (Rose et al., 1985)",as in AAindex entry,kept,no named source; relative accessibility concept -> Rose 1985 mean fractional area loss (= mean 1 - relative accessibility)
+flexibility,AAindex1,VINM940101,"Normalized flexibility parameters (B-values), average (Vihinen et al., 1994)",as in AAindex entry,kept,"no named source; 'normalized flexibility index' -> Vihinen 1994 normalized flexibility (B-values), average"
+helical_moment,AAindex1,EISD860102,"Atom-based hydrophobic moment (Eisenberg-McLachlan, 1986)",as in AAindex entry,kept,"per-residue helical moment is not a tabulated property; closest AAindex 'moment' entry is the atom-based hydrophobic moment (Eisenberg-McLachlan 1986), which is NOT helix-specific"
+strand_moment,none,,,,dropped,no AAindex strand-moment entry (EISD860102 already used and not strand-specific); no structure rule -> DROPPED
+hydrophobic_surface,AAindex1,ROSG850101,"Mean area buried on transfer (Rose et al., 1985)",as in AAindex entry,kept,no named source; 'hydrophobic surface tendency' -> Rose 1985 mean area buried on transfer
+sidechain_mass,AAindex1,FASG760101,"Molecular weight (Fasman, 1976)",as in AAindex entry,kept,molecular weight (Fasman 1976) = side-chain mass + a constant; identical after z-scoring

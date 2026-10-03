@@ -1,0 +1,120 @@
+{
+ "vectors": "descriptor_rebuild/NEW_VECTORS.csv (pc1..pc8, rescaled as stats.py)",
+ "part2": {
+  "A": {
+   "closed_form": {
+    "directed_edges": 96,
+    "between_block_directed_edges": 76,
+    "N": 16,
+    "k": 9,
+    "mean_d_distinct_ordered": 4.320692592336783,
+    "mean_d2_distinct_ordered": 19.41601811850246,
+    "D_mean": 20.52328981359972,
+    "E_mean": 737.8086885030935
+   },
+   "exhaustive": true,
+   "n_draws": 362880,
+   "D": {
+    "sampled_mean": 20.52328981359971,
+    "closed_form_mean": 20.52328981359972,
+    "diff": -1.0658141036401503e-14,
+    "null_sd": 0.7200054407814352,
+    "se": 0.0011952376412477667,
+    "diff_in_se": -8.917173178444205e-12,
+    "rel_diff": -5.193193261510591e-16
+   },
+   "E": {
+    "sampled_mean": 737.8086885030934,
+    "closed_form_mean": 737.8086885030935,
+    "diff": -1.1368683772161603e-13,
+    "null_sd": 48.4642705976286,
+    "se": 0.0804526149289019,
+    "diff_in_se": -1.4130906474834173e-12,
+    "rel_diff": -1.540871495458668e-16
+   }
+  },
+  "B": {
+   "closed_form": {
+    "directed_edges": 526,
+    "between_block_directed_edges": 392,
+    "N": 61,
+    "k": 20,
+    "mean_d_distinct_ordered": 3.990956840487155,
+    "mean_d2_distinct_ordered": 16.842105263157897,
+    "D_mean": 25.64680461427811,
+    "E_mean": 3301.052631578948
+   },
+   "exhaustive": false,
+   "n_draws": 10000000,
+   "D": {
+    "sampled_mean": 25.646578535949548,
+    "closed_form_mean": 25.64680461427811,
+    "diff": -0.00022607832856280652,
+    "null_sd": 0.7716225061964964,
+    "se": 0.00024400846134283173,
+    "diff_in_se": -0.9265183974303522,
+    "rel_diff": -8.815068074287273e-06
+   },
+   "E": {
+    "sampled_mean": 3300.9829201738435,
+    "closed_form_mean": 3301.052631578948,
+    "diff": -0.06971140510449914,
+    "null_sd": 178.54480707835202,
+    "se": 0.05646082547629457,
+    "diff_in_se": -1.23468625398982,
+    "rel_diff": -2.1117932031018547e-05
+   }
+  },
+  "C": {
+   "closed_form": {
+    "directed_edges": 526,
+    "between_block_directed_edges": 318,
+    "N": 61,
+    "k": 10,
+    "mean_d_distinct_ordered": 4.354529287829482,
+    "mean_d2_distinct_ordered": 19.69694877768378,
+    "D_mean": 22.700660877537302,
+    "E_mean": 3131.814855651721
+   },
+   "exhaustive": true,
+   "n_draws": 3628800,
+   "D": {
+    "sampled_mean": 22.7006608775373,
+    "closed_form_mean": 22.700660877537302,
+    "diff": -3.552713678800501e-15,
+    "null_sd": 0.797576750344366,
+    "se": 0.0004186884390671115,
+    "diff_in_se": -8.485339807128128e-12,
+    "rel_diff": -1.5650265417232733e-16
+   },
+   "E": {
+    "sampled_mean": 3131.814855651718,
+    "closed_form_mean": 3131.814855651721,
+    "diff": -2.7284841053187847e-12,
+    "null_sd": 206.96504025713605,
+    "se": 0.10864643385016934,
+    "diff_in_se": -2.511342534336236e-11,
+    "rel_diff": -8.712150082546932e-16
+   }
+  },
+  "stats_py_draws": "re-drawn: blockNull() builds fresh permutations with np.random.default_rng(SEED=20260924) (B) or itertools.permutations (A, C); no archived draws are read"
+ },
+ "part4": {
+  "n_descriptors": 20,
+  "pairs_abs_r_ge_0.93": [
+   {
+    "a": "solvent_accessibility",
+    "b": "flexibility",
+    "r": -0.9429683490185787,
+    "abs_r": 0.9429683490185787
+   },
+   {
+    "a": "isoelectric_point",
+    "b": "net_charge_pH7",
+    "r": 0.9407756235919901,
+    "abs_r": 0.9407756235919901
+   }
+  ],
+  "max_abs_r": 0.9429683490185787
+ }
+}

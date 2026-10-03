@@ -1,0 +1,154 @@
+{
+ "gate_0.95_reproduces_primary_maxabs_dist_diff": 1.7763568394002505e-15,
+ "build_0.95": {
+  "threshold": 0.95,
+  "kept": [
+   "hydropathy_KD",
+   "volume_Zamyatnin",
+   "polarity_Grantham",
+   "isoelectric_point",
+   "net_charge_pH7",
+   "hbond_donors",
+   "hbond_acceptors",
+   "aromaticity",
+   "ring_count",
+   "rotatable_bonds",
+   "molar_refractivity",
+   "bulkiness_Zimmerman",
+   "chou_fasman_alpha",
+   "chou_fasman_beta",
+   "chou_fasman_turn",
+   "solvent_accessibility",
+   "flexibility",
+   "helical_moment",
+   "hydrophobic_surface",
+   "sidechain_mass"
+  ],
+  "n_kept": 20,
+  "dropped": [],
+  "k97": 8,
+  "cum_var": [
+   0.3894107188000801,
+   0.6613595885919136,
+   0.7725688461546726,
+   0.8681863266745361,
+   0.9150137561343578,
+   0.9446145406777073,
+   0.961085918585128,
+   0.9748932065899963,
+   0.9833439904341612,
+   0.9889119859602624,
+   0.9931302848065422,
+   0.9965293972151259,
+   0.9979056357308809,
+   0.9988376740452714,
+   0.9995382590576002,
+   0.9997754173353619,
+   0.9998853028399401,
+   0.9999526468333922,
+   1.0,
+   1.0
+  ],
+  "cum_var_at_k97": 0.9748932065899963,
+  "cum_var_at_8": 0.9748932065899963
+ },
+ "build_0.94": {
+  "threshold": 0.94,
+  "kept": [
+   "hydropathy_KD",
+   "volume_Zamyatnin",
+   "polarity_Grantham",
+   "isoelectric_point",
+   "hbond_donors",
+   "hbond_acceptors",
+   "aromaticity",
+   "ring_count",
+   "rotatable_bonds",
+   "molar_refractivity",
+   "bulkiness_Zimmerman",
+   "chou_fasman_alpha",
+   "chou_fasman_beta",
+   "chou_fasman_turn",
+   "solvent_accessibility",
+   "helical_moment",
+   "hydrophobic_surface",
+   "sidechain_mass"
+  ],
+  "n_kept": 18,
+  "dropped": [
+   {
+    "dropped": "net_charge_pH7",
+    "by": "isoelectric_point",
+    "abs_r": 0.9407756235919902
+   },
+   {
+    "dropped": "flexibility",
+    "by": "solvent_accessibility",
+    "abs_r": 0.9429683490185787
+   }
+  ],
+  "k97": 8,
+  "cum_var": [
+   0.3896108632643515,
+   0.6774508664204277,
+   0.7948283792311996,
+   0.8661423672359723,
+   0.9149367035488454,
+   0.9444764883822816,
+   0.9625568493468736,
+   0.9753067927489605,
+   0.9842034590474495,
+   0.9892278118348852,
+   0.9935027834868595,
+   0.9972408739823325,
+   0.9985599649656292,
+   0.9994712312365572,
+   0.9998198444060905,
+   0.9999382573571134,
+   0.9999984090478352,
+   1.0
+  ],
+  "cum_var_at_k97": 0.9753067927489605,
+  "cum_var_at_8": 0.9753067927489605
+ },
+ "elapsed_s": 31.5,
+ "primary": {
+  "columns": [
+   "pc1",
+   "pc2",
+   "pc3",
+   "pc4",
+   "pc5",
+   "pc6",
+   "pc7",
+   "pc8"
+  ],
+  "s2_block_null": {
+   "B_1e6": {
+    "D": {
+     "sgc": 23.839669438870132,
+     "null_mean": 25.64683654680055,
+     "null_sd": 0.7711088534339464,
+     "z": -2.3435953301309373,
+     "p_strict_better": 0.0103,
+     "p_le": 0.0103,
+     "median": 25.65845355225712,
+     "n": 1000000
+    },
+    "E": {
+     "sgc": 2962.2378941509596,
+     "null_mean": 3301.028829110528,
+     "null_sd": 178.39581711888692,
+     "z": -1.8990968534525146,
+     "p_strict_better": 0.027219,
+     "p_le": 0.027219,
+     "median": 3300.150793736587,
+     "n": 1000000
+    },
+    "n_blocks": 20,
+    "exhaustive": false,
+    "n_draws": 1000000
+   }
+  }
+ }
+}

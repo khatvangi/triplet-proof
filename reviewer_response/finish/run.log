@@ -1,0 +1,8 @@
+R4 U: best=18.866276960 random 4/512 warm 0/64 (usage_cert 18.857417193) gap=1.151239 p1=0.000 p2=0.352 p3=1.000 (71.1s, t=89s)
+R4 P: best=17.383593506 random 5/512 warm 0/64 (usage_cert 17.383593506) gap=1.452253 p1=0.575 p2=0.830 p3=0.000 (67.0s, t=156s)
+missing P n=3 cells: [('P', 3.0, 5.0), ('P', 3.0, 10.0), ('P', 3.0, 30.0), ('P', 3.0, 100.0)]
+reproduction gate: True 25.98971561000055 25.98971561000055 t=180s
+n=3 P w=[3.0, 1.0, 5.0]: best=33.159572866 random 0/128 lift_Hinv:8/11 lift_Hterm:0/11 n3_neighbour(3.0, 1.0, 2.0):0/11 A_inv=-0.00000 A_term=+0.53185 cert=True syn3=1.000 (24.9s, t=205s)
+n=3 P w=[3.0, 1.0, 10.0]: best=33.159572866 random 0/128 lift_Hinv:10/11 lift_Hterm:0/11 n3_neighbour(3.0, 1.0, 5.0):9/11 A_inv=-0.00000 A_term=+0.68905 cert=True syn3=1.000 (25.2s, t=231s)
+n=3 P w=[3.0, 1.0, 30.0]: best=33.159572866 random 0/128 lift_Hinv:10/11 lift_Hterm:0/11 n3_neighbour(3.0, 1.0, 10.0):10/11 A_inv=-0.00000 A_term=+0.86604 cert=True syn3=1.000 (25.1s, t=256s)
+n=3 P w=[3.0, 1.0, 100.0]: best=33.159572866 random 0/128 lift_Hinv:10/11 lift_Hterm:0/11 n3_neighbour(3.0, 1.0, 30.0):10/11 A_inv=-0.00000 A_term=+0.95523 cert=True syn3=1.000 (24.6s, t=280s)

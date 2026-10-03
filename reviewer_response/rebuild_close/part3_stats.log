@@ -1,0 +1,2 @@
+gate 1.7763568394002505e-15 dropped [{'dropped': 'net_charge_pH7', 'by': 'isoelectric_point', 'abs_r': 0.9407756235919902}, {'dropped': 'flexibility', 'by': 'solvent_accessibility', 'abs_r': 0.9429683490185787}] k97 8
+primary s2 31
