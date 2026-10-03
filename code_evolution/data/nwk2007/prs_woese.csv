@@ -1,0 +1,27 @@
+# Polar Requirement Scale (PRS), the amino-acid scale used as h(a) in
+# Novozhilov, Wolf & Koonin 2007 (Biol Direct 2:24), their reference [6].
+# Values retrieved 2026-08-31 from AAindex entry WOEC730101
+#   https://www.genome.jp/dbget-bin/www_bget?aaindex:WOEC730101
+#   "Polar requirement (Woese, 1973)", Naturwiss. 60, 447-459, PMID 4588588.
+# See cost_matrix_provenance.md for the primary-source discussion.
+aa,polar_requirement
+A,7.0
+R,9.1
+N,10.0
+D,13.0
+C,5.5
+Q,8.6
+E,12.5
+G,7.9
+H,8.4
+I,4.9
+L,4.9
+K,10.1
+M,5.3
+F,5.0
+P,6.6
+S,7.5
+T,6.6
+W,5.3
+Y,5.7
+V,5.6
